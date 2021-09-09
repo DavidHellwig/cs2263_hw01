@@ -1,7 +1,17 @@
 # This is a changelog
-All notable changes to the project will be kept in this log
 
 
+# [1.0.0] 2021-09-08
+###Removed 
+- default greeting for app
+
+###Added
+- options for command line interface
+
+###bugfix
+
+###Unrealeased
+-main functionality for command line interface (reading commands)
 
 # [0.0.2] 2021-09-2
 ### Added

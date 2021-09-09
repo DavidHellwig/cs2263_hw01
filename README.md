@@ -1,9 +1,15 @@
 # cs2263_hw01
 
-Project : Homework One
+-Project : Homework One
 
-Description: This is an intro to using git, and version control. 
+-Description: This is an intro to using git, and version control. 
 
-Install: N/a
+-Install: clone repository from github into a folder
 
-Usage:N/a
+-Usage: N/A
+
+-Table of contents: N/a
+
+-Contributing: David Hellwig
+
+-Credits: David Hellwig, Lead Developer
