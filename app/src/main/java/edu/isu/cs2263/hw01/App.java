@@ -4,8 +4,10 @@
 //Author: David Hellwig
 package edu.isu.cs2263.hw01;
 
-import com.sun.jdi.connect.Connector;
+
 import org.apache.commons.cli.*;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -21,7 +23,7 @@ public class App {
 
     //Setting up the parser and options in main
     //The currently best know way (by contributor David) is to do this
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
         Options options = new Options();
 
         options.addOption("h", "help",false,"displays help message");
@@ -46,13 +48,12 @@ public class App {
                 System.exit(0);
             }
             else if (cmd.hasOption("b")){
-                String temp = Arrays.toString(cmd.getArgs());
-                System.out.println("batch:".concat(temp));
+                File batchFile = new File(Arrays.toString(cmd.getArgs())); //Fix this
+
 
             }
             else if (cmd.hasOption("o")){
-                String temp = Arrays.toString(cmd.getArgs());
-                System.out.println("output:".concat(temp));
+                File outputFile = new File(Arrays.toString(cmd.getArgs()));// Fix it!!
 
         }
 
