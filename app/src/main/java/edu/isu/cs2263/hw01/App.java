@@ -56,7 +56,7 @@ public class App {
             }
             else if (cmd.hasOption("o")){
                 File outputFile = new File(args[1]);
-                String output = Arrays.toString(cmd.getArgs());
+
                 System.out.println("output value: ".concat(outputFile.getName()));
 
         }
