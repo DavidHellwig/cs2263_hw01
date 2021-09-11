@@ -21,9 +21,9 @@ public class App {
 
 
 
-    //Setting up the parser and options in main
-    //The currently best know way (by contributor David) is to do this
+
     public static void main(String[] args) {
+        //Sets up the option
         Options options = new Options();
 
         options.addOption("h", "help",false,"displays help message");
@@ -32,7 +32,10 @@ public class App {
 
         options.addOption("o","output",true,"sends the output to the provided file");
 
+        //Create parser as suggested by Apache Commons Documentation
         CommandLineParser parser = new DefaultParser();
+
+        //Check to see what option is being used and do the action in the option
         try{
             CommandLine cmd = parser.parse(options, args);
 
@@ -46,16 +49,18 @@ public class App {
                 System.exit(0);
             }
             else if (cmd.hasOption("b")){
-                File batchFile = new File(Arrays.toString(cmd.getArgs())); //Fix this
-                String batch = Arrays.toString(cmd.getArgs());
-                System.out.println("Batch value: ".concat(batch));
+                File batchFile = new File(args[1]);
+
+
+
+                System.out.println("Batch value: ".concat(batchFile.getName()));
 
 
             }
             else if (cmd.hasOption("o")){
-                File outputFile = new File(Arrays.toString(cmd.getArgs()));// Fix it!!
-                String output = Arrays.toString(cmd.getArgs());
-                System.out.println("output value: ".concat(output));
+                File outputFile = new File(args[1]);
+
+                System.out.println("output value: ".concat(outputFile.getName()));
 
         }
 

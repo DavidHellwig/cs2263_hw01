@@ -1,5 +1,10 @@
 # This is a changelog
 
+#[1.0.1] 2021-09-11
+
+#[1.0.1] 2021-09-10
+###Bugifix
+- removed test that no longer applied to current version of build
 
 # [1.0.0] 2021-09-08
 ###Removed 
@@ -8,10 +13,6 @@
 ###Added
 - options for command line interface
 
-###bugfix
-
-###Unrealeased
--main functionality for command line interface (reading commands)
 
 # [0.0.2] 2021-09-2
 ### Added
