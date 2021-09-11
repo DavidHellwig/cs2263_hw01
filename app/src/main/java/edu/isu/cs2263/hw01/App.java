@@ -37,23 +37,25 @@ public class App {
             CommandLine cmd = parser.parse(options, args);
 
             if(cmd.hasOption("h")) {
-                System.out.println("""
-                        usage:eval [Options]
-                        Evaluation of mathemematical expressions
-                        -b,--batch <file>    batch file containing expressions to evaluate
-                        -h,--help            print usage message
-                        -o,--output <file>   output file
-                        \t\tCopyright (C) 2021 Isaac D. Griffith
-                        """);
+                System.out.println("usage: eval [OPTIONS]\nEvaluation of simple mathematical expressions\n" +
+                        "-b,--batch <file>    batch file containing expressions to evaluate\n" +
+                        "-h,--help            print usage message\n" +
+                        "-o,--output <file>   output file\n" +
+                        "\t\tCopyright (C) 2021 Isaac D. Griffith"
+                );
                 System.exit(0);
             }
             else if (cmd.hasOption("b")){
                 File batchFile = new File(Arrays.toString(cmd.getArgs())); //Fix this
+                String batch = Arrays.toString(cmd.getArgs());
+                System.out.println("Batch value: ".concat(batch));
 
 
             }
             else if (cmd.hasOption("o")){
                 File outputFile = new File(Arrays.toString(cmd.getArgs()));// Fix it!!
+                String output = Arrays.toString(cmd.getArgs());
+                System.out.println("output value: ".concat(output));
 
         }
 
