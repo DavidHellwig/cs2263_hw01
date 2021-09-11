@@ -46,16 +46,18 @@ public class App {
                 System.exit(0);
             }
             else if (cmd.hasOption("b")){
-                File batchFile = new File(Arrays.toString(cmd.getArgs())); //Fix this
-                String batch = Arrays.toString(cmd.getArgs());
-                System.out.println("Batch value: ".concat(batch));
+                File batchFile = new File(args[1]);
+
+
+
+                System.out.println("Batch value: ".concat(batchFile.getName()));
 
 
             }
             else if (cmd.hasOption("o")){
-                File outputFile = new File(Arrays.toString(cmd.getArgs()));// Fix it!!
+                File outputFile = new File(args[1]);
                 String output = Arrays.toString(cmd.getArgs());
-                System.out.println("output value: ".concat(output));
+                System.out.println("output value: ".concat(outputFile.getName()));
 
         }
 
