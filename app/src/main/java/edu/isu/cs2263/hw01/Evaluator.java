@@ -4,6 +4,7 @@ package edu.isu.cs2263.hw01;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -66,55 +67,61 @@ public class Evaluator {
     public void Evaluate(){
         int initialCapacity = 1000;
 
-        ArrayList<String> inputMemory = new ArrayList<>(initialCapacity);
+        //ArrayList<String> inputMemory = new ArrayList<>(initialCapacity);
 
         ArrayList<Integer> Memory = new ArrayList<>(2);
 
 
         Scanner scanner = new Scanner(System.in);
 
-        Scanner stringBreaker = new Scanner(Arrays.toString(scanner.next().split("[/+*-]+")));
+        String stringBreaker = scanner.nextLine();
 
-        //Input the user input
-        while (stringBreaker.hasNext()){
-            inputMemory.add(stringBreaker.next());
-        }
+        ArrayList<String> inputMemory = new ArrayList<>(Arrays.asList(stringBreaker.split("[/*+-]")));
 
-        checkForFirstSymbolMistake(inputMemory);
 
-        Memory.add(Integer.valueOf(inputMemory.remove(0)));
-
+        Memory.add(Integer.parseInt(inputMemory.remove(0)));
 
         //Read symbol by symbol to figure out what to do next. Does not consider order of operations
-        while (inputMemory.size() >= 1){
+        do {
 
-            checkForDoubleOperator(inputMemory);
-            switch (inputMemory.get(0)) {
-                case "/":
-                    Memory.add(divideNumber(Memory.get(0), Integer.parseInt(inputMemory.get(1))));
+            //checkForDoubleOperator(inputMemory);
+            if (inputMemory.get(0).equals("/")){
+                Memory.add(divideNumber(Memory.remove(0), Integer.parseInt(inputMemory.remove(1))));
+                inputMemory.remove(0);
+                inputMemory.remove(1);
 
+                break;
 
-                    break;
-                case "*":
-                    Memory.add(multiplyNumber(Memory.get(0), Integer.parseInt(inputMemory.get(1))));
+            }
+            else if (inputMemory.get(0).equals("+")){
+                Memory.add(addNumbers(Memory.remove(0), Integer.parseInt(inputMemory.remove(1))));
+                inputMemory.remove(0);
+                inputMemory.remove(1);
 
-                    break;
-                case "+":
-                    Memory.add(addNumbers(Memory.get(0), Integer.parseInt(inputMemory.get(1))));
+                break;
+            }
+            else if (inputMemory.get(0).equals("-")){
+                Memory.add(subtractNumbers(Memory.remove(0), Integer.parseInt(inputMemory.remove(1))));
+                inputMemory.remove(0);
+                inputMemory.remove(1);
 
-                    break;
-                case "-":
-                    Memory.add(subtractNumbers(Memory.get(0), Integer.parseInt(inputMemory.get(1))));
+                break;
+            }
+            else if (inputMemory.get(0).equals("*")){
+                Memory.add(multiplyNumber(Memory.remove(0), Integer.parseInt(inputMemory.remove(1))));
+                inputMemory.remove(0);
+                inputMemory.remove(1);
 
-                    break;
-                default:
-                    break;
+                break;
             }
 
 
-        }
-        //Just print out the results
+
+
+        }while (inputMemory.size() != 0 );
         showResults(Memory);
+
+
     }
 
 }

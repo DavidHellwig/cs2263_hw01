@@ -8,8 +8,7 @@ package edu.isu.cs2263.hw01;
 import org.apache.commons.cli.*;
 
 import java.io.File;
-
-
+import java.util.Scanner;
 
 
 public class App {
@@ -31,15 +30,20 @@ public class App {
 
         options.addOption("o","output",true,"sends the output to the provided file");
 
+        options.addOption("eval",false,"evaluate expression");
+
 
         //Create parser as suggested by Apache Commons Documentation
         CommandLineParser parser = new DefaultParser();
 
-        //Check to see what option is being used and do the action in the option
-        InputHandler test = new InputHandler();
+
         try {
 
             CommandLine cmd = parser.parse(options, args);
+
+
+
+
 
 
             if (cmd.hasOption("h")) {
@@ -62,6 +66,9 @@ public class App {
 
                 System.out.println("output value: ".concat(outputFile.getName()));
 
+            }
+            else if (cmd.hasOption("eval")){
+                InputHandler test = new InputHandler();
             }
         }
         catch (ParseException e) {
