@@ -8,11 +8,9 @@ package edu.isu.cs2263.hw01;
 import org.apache.commons.cli.*;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
-import java.util.Arrays;
+
+
 
 public class App {
 
@@ -22,6 +20,7 @@ public class App {
 
 
 
+    @SuppressWarnings("TextBlockMigration")
     public static void main(String[] args) {
         //Sets up the option
         Options options = new Options();
@@ -32,14 +31,18 @@ public class App {
 
         options.addOption("o","output",true,"sends the output to the provided file");
 
+
         //Create parser as suggested by Apache Commons Documentation
         CommandLineParser parser = new DefaultParser();
 
         //Check to see what option is being used and do the action in the option
-        try{
+        InputHandler test = new InputHandler();
+        try {
+
             CommandLine cmd = parser.parse(options, args);
 
-            if(cmd.hasOption("h")) {
+
+            if (cmd.hasOption("h")) {
                 System.out.println("usage: eval [OPTIONS]\nEvaluation of simple mathematical expressions\n" +
                         "-b,--batch <file>    batch file containing expressions to evaluate\n" +
                         "-h,--help            print usage message\n" +
@@ -47,25 +50,19 @@ public class App {
                         "\t\tCopyright (C) 2021 Isaac D. Griffith"
                 );
                 System.exit(0);
-            }
-            else if (cmd.hasOption("b")){
+            } else if (cmd.hasOption("b")) {
                 File batchFile = new File(args[1]);
-
 
 
                 System.out.println("Batch value: ".concat(batchFile.getName()));
 
 
-            }
-            else if (cmd.hasOption("o")){
+            } else if (cmd.hasOption("o")) {
                 File outputFile = new File(args[1]);
 
                 System.out.println("output value: ".concat(outputFile.getName()));
 
-        }
-
-
-
+            }
         }
         catch (ParseException e) {
             e.printStackTrace();
