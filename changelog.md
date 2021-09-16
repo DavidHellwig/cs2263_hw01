@@ -1,6 +1,9 @@
 # This is a change log
 
-#[1.0.1] 2021-09-11
+#[1.1.0] 2021-09-16
+###
+-added evaluation component
+-updated readme.md
 
 #[1.0.1] 2021-09-10
 ###Bugifix
