@@ -8,6 +8,7 @@ package edu.isu.cs2263.hw01;
 import org.apache.commons.cli.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
@@ -21,7 +22,7 @@ public class App {
 
     @SuppressWarnings("TextBlockMigration")
     public static void main(String[] args) {
-        //Sets up the option
+        //Sets up the options
         Options options = new Options();
 
         options.addOption("h", "help",false,"displays help message");
@@ -41,11 +42,8 @@ public class App {
 
             CommandLine cmd = parser.parse(options, args);
 
-
-
-
-
-
+            //Get the option based on arg
+            //Help
             if (cmd.hasOption("h")) {
                 System.out.println("usage: eval [OPTIONS]\nEvaluation of simple mathematical expressions\n" +
                         "-b,--batch <file>    batch file containing expressions to evaluate\n" +
@@ -54,24 +52,28 @@ public class App {
                         "\t\tCopyright (C) 2021 Isaac D. Griffith"
                 );
                 System.exit(0);
+              //Process fule
             } else if (cmd.hasOption("b")) {
+
                 File batchFile = new File(args[1]);
 
+                InputFileOps input = new InputFileOps();
 
-                System.out.println("Batch value: ".concat(batchFile.getName()));
-
-
+                input.scanFile(batchFile.getAbsoluteFile());
+            //Output to file
             } else if (cmd.hasOption("o")) {
                 File outputFile = new File(args[1]);
 
                 System.out.println("output value: ".concat(outputFile.getName()));
-
             }
+            //Begin evaluation
             else if (cmd.hasOption("eval")){
                 InputHandler test = new InputHandler();
             }
         }
-        catch (ParseException e) {
+        //Redundancy
+        catch (ParseException | FileNotFoundException e) {
+
             e.printStackTrace();
         }
     }
