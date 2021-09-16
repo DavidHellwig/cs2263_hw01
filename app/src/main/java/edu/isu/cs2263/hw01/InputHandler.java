@@ -6,7 +6,7 @@ package edu.isu.cs2263.hw01;
 import java.util.Scanner;
 
 public class InputHandler implements InputInterface{
-
+    //Create object to handle input
     public InputHandler(){
         scanInput();
     }
@@ -27,6 +27,8 @@ public class InputHandler implements InputInterface{
     @Override
     public void start() {
         Evaluator evaluator = new Evaluator();
+        Scanner scanner = new Scanner(System.in);
+        evaluator.Evaluate(scanner);
     }
 
     @Override
