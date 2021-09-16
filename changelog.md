@@ -1,4 +1,4 @@
-# This is a changelog
+# This is a change log
 
 #[1.0.1] 2021-09-11
 
@@ -13,7 +13,6 @@
 ###Added
 - options for command line interface
 
-
 # [0.0.2] 2021-09-2
 ### Added
 - added change log 
@@ -22,7 +21,3 @@
 ### Added
 - inital documentation feature
 - readme.md file
-
-
-
- 
