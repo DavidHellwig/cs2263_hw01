@@ -1,9 +1,11 @@
-# This is a change log
+# This is a changelog
 
 #[1.1.0] 2021-09-16
-###
--added evaluation component
--updated readme.md
+###Added
+-evaluator
+-file scanner
+-input handler
+
 
 #[1.0.1] 2021-09-10
 ###Bugifix
@@ -16,6 +18,7 @@
 ###Added
 - options for command line interface
 
+
 # [0.0.2] 2021-09-2
 ### Added
 - added change log 
@@ -24,3 +27,7 @@
 ### Added
 - inital documentation feature
 - readme.md file
+
+
+
+ 
