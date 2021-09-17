@@ -1,4 +1,4 @@
-# This is a change log
+# This is a changelog
 
 ##Unreleased
 
@@ -11,8 +11,12 @@
 -
 #[1.1.0] 2021-09-16
 ###Added
+<<<<<<< HEAD
 -added evaluation feature
 -updated README.md
+-evaluator
+-file scanner
+-input handler
 
 #[1.0.1] 2021-09-10
 ###Fixed
@@ -25,11 +29,19 @@
 ###Added
 - options for command line interface
 
+
 # [0.0.2] 2021-09-2
 ### Added
 - added change log 
 
 # [0.0.1] 2021-09-1
 ### Added
+<<<<<<< HEAD
 -inital documentation feature
 -readme.md file
+- inital documentation feature
+- readme.md file
+
+
+
+ 
