@@ -9,6 +9,7 @@ import org.apache.commons.cli.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -21,7 +22,7 @@ public class App {
 
 
     @SuppressWarnings("TextBlockMigration")
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //Sets up the options
         Options options = new Options();
 
@@ -52,7 +53,7 @@ public class App {
                         "\t\tCopyright (C) 2021 Isaac D. Griffith"
                 );
                 System.exit(0);
-              //Process fule
+              //Process file
             } else if (cmd.hasOption("b")) {
 
                 File batchFile = new File(args[1]);
@@ -64,11 +65,15 @@ public class App {
             } else if (cmd.hasOption("o")) {
                 File outputFile = new File(args[1]);
 
-                System.out.println("output value: ".concat(outputFile.getName()));
+                OutPutFileOps outPutFileOps = new OutPutFileOps();
+                outPutFileOps.beginOutput(outputFile);
+
+
             }
             //Begin evaluation
             else if (cmd.hasOption("eval")){
-                InputHandler test = new InputHandler();
+                InputHandler inputHandler = new InputHandler();
+
             }
         }
         //Redundancy

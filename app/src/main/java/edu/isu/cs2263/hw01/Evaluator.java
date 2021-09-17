@@ -9,6 +9,7 @@ public class Evaluator {
 
     public Evaluator(){
 
+
         }
 
 
@@ -34,13 +35,13 @@ public class Evaluator {
 
 
     //Just print results of expression
-    public void showResults(double a){
-        System.out.println(a);
+    public double getMemory(double d){
+        return d;
     }
     //Evaluate expression
-    public void Evaluate(Scanner s){
+    public double Evaluate(Scanner s){
 
-        String[] stringBreaker = s.nextLine().split("");
+        String[] stringBreaker = s.nextLine().split("\s");
 
         int i = 0;
 
@@ -50,8 +51,8 @@ public class Evaluator {
 
 
         //Read symbol by symbol to figure out what to do next. Does not consider order of operations
-        //Assumes you made no error
-        Memory = Double.parseDouble(Memory + stringBreaker[0]);
+        //Assumes you made no error in inputting numbers and symbols
+        Memory = Memory + Double.parseDouble(stringBreaker[0]);
         while (i+2 < j){
 
             try {
@@ -73,8 +74,10 @@ public class Evaluator {
 
             }
         }
-        //Due to the nature of doubles answer is off by a factor of 100. But allows for decimals
-        showResults(Memory*100);
+
+        System.out.println(Memory);
+        return Memory;
+
 
 
 

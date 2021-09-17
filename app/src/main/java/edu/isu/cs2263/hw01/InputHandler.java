@@ -16,10 +16,10 @@ public class InputHandler implements InputInterface{
 
         String checkInput = scanner.nextLine();
 
-        if (checkInput.matches("\\b(?i)start\\b")){
+        if (checkInput.matches("\s*\\b(?i)start\\b\s*")){
             start();
         }
-        else if (checkInput.matches("\\b(?i)exit\\b")){
+        else if (checkInput.matches("\s*\\b(?i)exit\\b\s*")){
             exit();
         }
     }
