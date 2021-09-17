@@ -58,10 +58,15 @@ public class Evaluator {
             try {
 
                 Memory = switch (stringBreaker[i + 1]) {
+
                     case "/" -> divideNumber(Memory, Double.parseDouble(stringBreaker[i + 2]));
+
                     case "+" -> addNumbers(Memory, Double.parseDouble(stringBreaker[i + 2]));
+
                     case "-" -> subtractNumbers(Memory, Double.parseDouble(stringBreaker[i + 2]));
+
                     case "*" -> multiplyNumber(Memory, Double.parseDouble(stringBreaker[i + 2]));
+
                     default -> Memory;
                 };
                 i+=2;
@@ -76,6 +81,7 @@ public class Evaluator {
         }
 
         System.out.println(Memory);
+
         return Memory;
 
 

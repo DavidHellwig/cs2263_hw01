@@ -11,12 +11,11 @@ public class InputFileOps implements InputInterface{
     public void start(){
         return;
 
-
-
         }
 
     @Override
     public void exit() {
+
         System.exit(0);
 
     }
@@ -28,12 +27,16 @@ public class InputFileOps implements InputInterface{
 
         try {
             reader = new Scanner(batchfile);
+
           //Let user know they used an incorrect file name
         } catch (FileNotFoundException e) {
+
             System.out.println("You used an invalid filename");
+
             exit();
         }
         Evaluator evaluator = new Evaluator();
+
         evaluator.Evaluate(reader);
 
 

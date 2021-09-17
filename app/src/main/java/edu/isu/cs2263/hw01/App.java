@@ -61,17 +61,20 @@ public class App {
                 InputFileOps input = new InputFileOps();
 
                 input.scanFile(batchFile.getAbsoluteFile());
+
             //Output to file
             } else if (cmd.hasOption("o")) {
                 File outputFile = new File(args[1]);
 
                 OutPutFileOps outPutFileOps = new OutPutFileOps();
+
                 outPutFileOps.beginOutput(outputFile);
 
 
             }
             //Begin evaluation
             else if (cmd.hasOption("eval")){
+
                 InputHandler inputHandler = new InputHandler();
 
             }
