@@ -2,11 +2,12 @@
 
 package edu.isu.cs2263.hw01;
 
-import java.io.FileNotFoundException;
+//Create interface for input handling
 
 public interface InputInterface {
 
     void start();
+
     void exit();
 
 
